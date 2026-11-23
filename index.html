@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yellowrecent | 향수 · 핸드크림 쇼핑몰</title>
+  <meta name="description" content="yellowrecent - 머스크향, 플라워향, 우디향 향수와 핸드크림 쇼핑몰">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <!-- ===== 머리글 ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#/" class="logo" aria-label="yellowrecent 홈">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text"><strong>yellowrecent</strong><small>perfume &amp; hand cream</small></span>
+      </a>
+      <div class="header-actions">
+        <a href="#/login" class="header-btn" id="accountLink">로그인</a>
+        <a href="#/cart" class="header-btn header-btn-cart">장바구니 <span class="badge" id="cartCount">0</span></a>
+      </div>
+    </div>
+
+    <!-- ===== 주 메뉴 ===== -->
+    <nav class="nav" aria-label="주 메뉴">
+      <ul class="container nav-list">
+        <li><a href="#/" data-nav="home">홈</a></li>
+        <li><a href="#/shop" data-nav="shop-all">전체상품</a></li>
+        <li><a href="#/shop/musk" data-nav="shop-musk">머스크향</a></li>
+        <li><a href="#/shop/flower" data-nav="shop-flower">플라워향</a></li>
+        <li><a href="#/shop/woody" data-nav="shop-woody">우디향</a></li>
+        <li><a href="#/benefit" data-nav="benefit">등급혜택</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== 1. 홈 ===== -->
+    <section class="view" data-view="home" aria-label="홈">
+      <div class="slider" id="slider" aria-roledescription="슬라이드">
+        <div class="slide is-active">
+          <img src="img/slide1.jpg" alt="미모사 캐릭터 벽지 앞에 놓인 yellowrecent 향수 세 병">
+          <div class="slide-text">
+            <p class="eyebrow">yellowrecent</p>
+            <h2>오늘의 기분을<br>노랗게 남기는 향</h2>
+            <p>머스크 · 플라워 · 우디, 세 가지 결의 향수와 핸드크림</p>
+            <a href="#/shop" class="btn btn-dark">전체상품 보기</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="img/slide2.jpg" alt="연핑크 미모사 벽지 앞의 머스크 향수 두 병">
+          <div class="slide-text">
+            <p class="eyebrow">MUSK</p>
+            <h2>갓 세탁한 셔츠처럼<br>포근한 머스크</h2>
+            <p>출근길, 강의실 어디서나 부담 없는 살냄새 향</p>
+            <a href="#/shop/musk" class="btn btn-dark">머스크향 보기</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="img/slide3.jpg" alt="미모사 가지 사이에 놓인 플라워 향수">
+          <div class="slide-text">
+            <p class="eyebrow">FLOWER</p>
+            <h2>봄 햇살을 담은<br>프리지아와 미모사</h2>
+            <p>밝고 산뜻한 노란 꽃의 플라워 향</p>
+            <a href="#/shop/flower" class="btn btn-dark">플라워향 보기</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="img/slide4.jpg" alt="나무 받침 위의 우디 향수와 핸드크림 두 개">
+          <div class="slide-text">
+            <p class="eyebrow">WOODY &amp; HAND CREAM</p>
+            <h2>차분한 나무 향을<br>손끝까지</h2>
+            <p>샌달우드 · 시더우드 향수와 촉촉한 핸드크림</p>
+            <a href="#/shop/woody" class="btn btn-dark">우디향 보기</a>
+          </div>
+        </div>
+        <button type="button" class="slider-arrow prev" id="slidePrev" aria-label="이전 사진">&#8249;</button>
+        <button type="button" class="slider-arrow next" id="slideNext" aria-label="다음 사진">&#8250;</button>
+        <div class="slider-dots" id="slideDots"></div>
+      </div>
+
+      <section class="container block">
+        <div class="block-head">
+          <h2>향으로 고르기</h2>
+          <a href="#/shop" class="more-link">전체보기</a>
+        </div>
+        <div class="category-grid" id="categoryCards"></div>
+      </section>
+
+      <section class="container block">
+        <div class="block-head">
+          <h2>yellowrecent 추천</h2>
+          <a href="#/shop" class="more-link">전체보기</a>
+        </div>
+        <div class="product-grid" id="homeProducts"></div>
+      </section>
+
+      <section class="container block">
+        <div class="promo">
+          <div>
+            <p class="eyebrow">WELCOME</p>
+            <h2>지금 가입하면 3,000P 바로 지급</h2>
+            <p>구매할 때마다 회원 등급에 따라 1% · 3% · 5% · 7% 포인트가 쌓여요.</p>
+          </div>
+          <div class="promo-actions">
+            <a href="#/signup" class="btn btn-dark">회원가입</a>
+            <a href="#/benefit" class="btn btn-line">등급 혜택 보기</a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ===== 2. 상품 목록 ===== -->
+    <section class="view container" data-view="shop" aria-labelledby="shopTitle" hidden>
+      <div class="page-head">
+        <h1 id="shopTitle">전체상품</h1>
+        <p id="shopDesc">yellowrecent의 향수와 핸드크림을 모두 만나보세요.</p>
+      </div>
+      <form class="toolbar" id="searchForm" role="search">
+        <label class="sr-only" for="searchInput">상품 검색</label>
+        <input type="search" id="searchInput" placeholder="상품 이름이나 향으로 검색 (예: 머스크, 핸드크림)" autocomplete="off">
+        <button type="submit" class="btn btn-yellow">검색</button>
+      </form>
+      <div class="filters">
+        <div class="chips" id="categoryChips" role="group" aria-label="향 분류"></div>
+        <div class="filter-selects">
+          <label class="sr-only" for="typeSelect">종류</label>
+          <select id="typeSelect">
+            <option value="all">종류 전체</option>
+            <option value="향수">향수</option>
+            <option value="핸드크림">핸드크림</option>
+          </select>
+          <label class="sr-only" for="sortSelect">정렬</label>
+          <select id="sortSelect">
+            <option value="recommend">추천순</option>
+            <option value="low">낮은 가격순</option>
+            <option value="high">높은 가격순</option>
+            <option value="name">이름순</option>
+          </select>
+        </div>
+      </div>
+      <p class="result-count" id="resultCount" aria-live="polite"></p>
+      <div class="product-grid" id="shopProducts"></div>
+    </section>
+
+    <!-- ===== 3. 상품 상세 ===== -->
+    <section class="view container" data-view="detail" aria-label="상품 상세" hidden>
+      <div id="detailBox"></div>
+    </section>
+
+    <!-- ===== 4. 장바구니 ===== -->
+    <section class="view container" data-view="cart" aria-labelledby="cartTitle" hidden>
+      <div class="page-head"><h1 id="cartTitle">장바구니</h1></div>
+      <div id="cartBox"></div>
+    </section>
+
+    <!-- ===== 5. 주문 · 체험 결제 ===== -->
+    <section class="view container" data-view="checkout" aria-labelledby="checkoutTitle" hidden>
+      <div class="page-head">
+        <h1 id="checkoutTitle">주문 · 체험 결제</h1>
+        <p>실제 결제는 이루어지지 않으며, 주문 내역만 저장됩니다.</p>
+      </div>
+      <div id="checkoutBox"></div>
+    </section>
+
+    <!-- ===== 6. 주문 완료 ===== -->
+    <section class="view container" data-view="complete" aria-label="주문 완료" hidden>
+      <div id="completeBox"></div>
+    </section>
+
+    <!-- ===== 7. 로그인 ===== -->
+    <section class="view container" data-view="login" aria-labelledby="loginTitle" hidden>
+      <div class="form-card">
+        <h1 id="loginTitle">로그인</h1>
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="loginEmail">이메일</label>
+            <input type="email" id="loginEmail" autocomplete="username" required>
+          </div>
+          <div class="field">
+            <label for="loginPw">비밀번호</label>
+            <input type="password" id="loginPw" autocomplete="current-password" required>
+          </div>
+          <p class="form-error" id="loginError" role="alert"></p>
+          <button type="submit" class="btn btn-yellow btn-block">로그인</button>
+        </form>
+        <p class="form-foot">아직 회원이 아니신가요? <a href="#/signup">회원가입하고 3,000P 받기</a></p>
+      </div>
+    </section>
+
+    <!-- ===== 8. 회원가입 ===== -->
+    <section class="view container" data-view="signup" aria-labelledby="signupTitle" hidden>
+      <div class="form-card">
+        <h1 id="signupTitle">회원가입</h1>
+        <p class="form-lead">가입 즉시 <strong>3,000P</strong>를 드려요.</p>
+        <form id="signupForm" novalidate>
+          <div class="field">
+            <label for="suEmail">이메일 (아이디)</label>
+            <input type="email" id="suEmail" autocomplete="username" placeholder="example@email.com" required>
+          </div>
+          <div class="field">
+            <label for="suPw">비밀번호</label>
+            <input type="password" id="suPw" autocomplete="new-password" placeholder="영문 · 숫자 포함 8자 이상" required>
+          </div>
+          <div class="field">
+            <label for="suPw2">비밀번호 확인</label>
+            <input type="password" id="suPw2" autocomplete="new-password" required>
+          </div>
+          <div class="field">
+            <label for="suName">이름</label>
+            <input type="text" id="suName" autocomplete="name" maxlength="20" required>
+          </div>
+          <div class="field">
+            <label for="suPhone">휴대폰 번호</label>
+            <input type="tel" id="suPhone" autocomplete="tel" placeholder="010-1234-5678" maxlength="13" required>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="suAgree">
+            <span>(필수) 이용약관 및 개인정보 수집 · 이용에 동의합니다.</span>
+          </label>
+          <p class="form-error" id="signupError" role="alert"></p>
+          <button type="submit" class="btn btn-yellow btn-block">가입하고 3,000P 받기</button>
+        </form>
+        <p class="form-foot">이미 회원이신가요? <a href="#/login">로그인</a></p>
+      </div>
+    </section>
+
+    <!-- ===== 9. 마이페이지 ===== -->
+    <section class="view container" data-view="mypage" aria-labelledby="mypageTitle" hidden>
+      <div class="page-head"><h1 id="mypageTitle">마이페이지</h1></div>
+      <div id="mypageBox"></div>
+    </section>
+
+    <!-- ===== 10. 등급 혜택 ===== -->
+    <section class="view container" data-view="benefit" aria-labelledby="benefitTitle" hidden>
+      <div class="page-head">
+        <h1 id="benefitTitle">회원 등급 혜택</h1>
+        <p>누적 구매금액에 따라 등급이 올라가고, 등급별로 포인트가 적립됩니다.</p>
+      </div>
+      <div class="grade-grid" id="gradeCards"></div>
+      <div class="info-box">
+        <h2>포인트 안내</h2>
+        <ul>
+          <li>회원가입 즉시 <strong>3,000P</strong>를 드립니다.</li>
+          <li>적립 포인트 = (상품금액 − 사용 포인트) × 등급 적립률 (배송비 제외, 1P 미만 버림)</li>
+          <li>누적 구매금액도 같은 기준(상품금액 − 사용 포인트)으로 계산됩니다.</li>
+          <li>포인트는 1P = 1원으로 주문할 때 바로 사용할 수 있습니다.</li>
+          <li><span id="shipInfo"></span></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 바닥글 ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-logo">yellowrecent</p>
+        <p>향수 · 핸드크림 전문 쇼핑몰</p>
+        <p class="footer-note">이 사이트는 「경영데이터베이스및실습」 수업 실습용 쇼핑몰로, 실제 결제와 배송은 이루어지지 않습니다.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#/shop">전체상품</a></li>
+        <li><a href="#/benefit">등급혜택</a></li>
+        <li><a href="#/cart">장바구니</a></li>
+        <li><a href="#/mypage">마이페이지</a></li>
+      </ul>
+    </div>
+    <p class="copyright">&copy; 2026 yellowrecent. All rights reserved.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
